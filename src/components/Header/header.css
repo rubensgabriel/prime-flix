@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Waltograph';
+  src: url('../../assets/fonts/waltograph/waltograph42.otf') format('opentype'),
+       url('../../assets/fonts/waltograph/waltographUI.ttf') format('truetype');
+       font-weight: normal;
+       font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-color: #000000;
+    padding: 40px 30px 30px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Waltograph' , sans-serif;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.favoritos, .home {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    letter-spacing: -1px;
+    transition: all .3s;
+}
+
+.favoritos::before,
+.home::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #dfdfdf;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.favoritos:hover::before,
+.home:hover::before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.favoritos:hover, .home:hover {
+  color: #dfdfdf;
+}
+
+@media (max-width: 450px) {
+  header {
+    padding: 45px 20px 30px;
+  }
+
+  .links span {
+    display: none;
+  }
+
+  .favoritos, .home {
+    font-size: 28px;
+  }
+}
